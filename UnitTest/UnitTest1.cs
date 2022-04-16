@@ -156,13 +156,11 @@ namespace UnitTest
         
         public string Replace(int replaceNumber)
         {
-            if (replaceNumber == 13) return "Fizz";
-            
             var result = "";
 
             foreach (var divisorNumber in new int[]{ 3, 5 })
             {
-                if (IsDivide(replaceNumber, divisorNumber))
+                if (IsDivide(replaceNumber, divisorNumber) || replaceNumber.ToString().Contains(divisorNumber.ToString()))
                 {
                     result +=  _replaceDictionary[divisorNumber];
                 }
