@@ -322,6 +322,27 @@ namespace UnitTest
             const string expected = "Rozz";
             Assert.AreEqual(expected, actual);
         }
+        
+        [Test]
+        public void Use_User_Config_And_Input_8_return_Gozz()
+        {
+            //Arrange
+            var userConfig = new Dictionary<int, string>
+            {
+                { 4 , "Gozz"},
+                { 6 , "Rozz"},
+            };
+            
+            var converter = new NumberConverter(userConfig);
+
+            //Act
+            const int replaceNumber = 8;
+            var actual = converter.Replace(replaceNumber);
+
+            //Assert
+            const string expected = "Gozz";
+            Assert.AreEqual(expected, actual);
+        }
     }
 
     public class NumberConverter
