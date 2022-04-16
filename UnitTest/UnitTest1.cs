@@ -97,12 +97,17 @@ namespace UnitTest
         public string Replace(int replaceNumber)
         {
             var divisorNumber = 3;
-            if (replaceNumber % divisorNumber == 0) return _replaceDictionary[divisorNumber];
+            if (IsDivide(replaceNumber, divisorNumber)) return _replaceDictionary[divisorNumber];
 
             divisorNumber = 5;
-            if (replaceNumber % divisorNumber == 0) return _replaceDictionary[divisorNumber];
+            if (IsDivide(replaceNumber, divisorNumber)) return _replaceDictionary[divisorNumber];
             
             return replaceNumber.ToString();
+        }
+
+        private static bool IsDivide(int replaceNumber, int divisorNumber)
+        {
+            return replaceNumber % divisorNumber == 0;
         }
     }
 }
