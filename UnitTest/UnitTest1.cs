@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Reflection;
 using NUnit.Framework;
 
 namespace UnitTest
@@ -289,6 +290,16 @@ namespace UnitTest
             { 5, "Buzz"},
             { 7, "Whizz"}
         };
+
+        public NumberConverter()
+        {
+            
+        }
+
+        public NumberConverter(Dictionary<int, string> userConfig)
+        {
+            _replaceDictionary = userConfig;
+        }
         
         public string Replace(int replaceNumber)
         {
