@@ -241,14 +241,15 @@ namespace UnitTest
         private Dictionary<int, string> _replaceDictionary = new Dictionary<int, string>
         {
             { 3, "Fizz"},
-            { 5, "Buzz"}
+            { 5, "Buzz"},
+            { 7, "Whizz"}
         };
         
         public string Replace(int replaceNumber)
         {
             var result = "";
 
-            foreach (var divisorNumber in new int[]{ 3, 5 })
+            foreach (var divisorNumber in new int[]{ 3, 5, 7 })
             {
                 if (IsDivide(replaceNumber, divisorNumber) || HasNumber(replaceNumber, divisorNumber))
                 {
