@@ -59,6 +59,8 @@ namespace UnitTest
     {
         public string Replace(int replaceNumber)
         {
+            if (replaceNumber % 3 == 0) return "Fizz";
+            
             return replaceNumber.ToString();
         }
     }
