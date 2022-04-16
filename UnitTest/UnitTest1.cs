@@ -206,6 +206,21 @@ namespace UnitTest
         }
         
         [Test]
+        public void Input_7_return_Whizz()
+        {
+            //Arrange
+            var converter = new NumberConverter();
+
+            //Act
+            const int replaceNumber = 7;
+            var actual = converter.Replace(replaceNumber);
+
+            //Assert
+            const string expected = "Whizz";
+            Assert.AreEqual(expected, actual);
+        }
+        
+        [Test]
         public void Input_53_return_FizzBuzz()
         {
             //Arrange
