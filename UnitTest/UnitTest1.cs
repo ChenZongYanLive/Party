@@ -90,6 +90,7 @@ namespace UnitTest
         public string Replace(int replaceNumber)
         {
             if (replaceNumber % 3 == 0) return "Fizz";
+            if (replaceNumber % 5 == 0) return "Buzz";
             
             return replaceNumber.ToString();
         }
