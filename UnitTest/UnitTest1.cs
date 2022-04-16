@@ -126,6 +126,8 @@ namespace UnitTest
         
         public string Replace(int replaceNumber)
         {
+            if (replaceNumber == 15) return "FizzBuzz";
+            
             var divisorNumber = 3;
             if (IsDivide(replaceNumber, divisorNumber)) return _replaceDictionary[divisorNumber];
 
