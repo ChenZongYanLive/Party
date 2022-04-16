@@ -146,7 +146,7 @@ namespace UnitTest
         }
         
         [Test]
-        public void Input_27_return_Fizz()
+        public void Input_27_return_FizzWhizz()
         {
             //Arrange
             var converter = new NumberConverter();
@@ -156,7 +156,7 @@ namespace UnitTest
             var actual = converter.Replace(replaceNumber);
 
             //Assert
-            const string expected = "Fizz";
+            const string expected = "FizzWhizz";
             Assert.AreEqual(expected, actual);
         }
         
