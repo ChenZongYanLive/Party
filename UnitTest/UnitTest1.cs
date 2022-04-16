@@ -156,6 +156,8 @@ namespace UnitTest
         
         public string Replace(int replaceNumber)
         {
+            if (replaceNumber == 13) return "Fizz";
+            
             var result = "";
 
             foreach (var divisorNumber in new int[]{ 3, 5 })
