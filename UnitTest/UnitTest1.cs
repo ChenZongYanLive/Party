@@ -388,6 +388,30 @@ namespace UnitTest
             const string expected = "Gozz";
             Assert.AreEqual(expected, actual);
         }
+        
+        [Test]
+        public void Use_User_Config2_And_Input_6_return_FizzRozz()
+        {
+            //Arrange
+            var userConfig = new Dictionary<int, string>
+            {
+                { 3 , "Fizz"},
+                { 4 , "Gozz"},
+                { 5 , "Buzz"},
+                { 6 , "Rozz"},
+                { 7 , "Whizz"},
+            };
+            
+            var converter = new NumberConverter(userConfig);
+
+            //Act
+            const int replaceNumber = 6;
+            var actual = converter.Replace(replaceNumber);
+
+            //Assert
+            const string expected = "FizzRozz";
+            Assert.AreEqual(expected, actual);
+        }
     }
 
     public class NumberConverter
