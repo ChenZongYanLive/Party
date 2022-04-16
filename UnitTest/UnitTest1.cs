@@ -29,7 +29,7 @@ namespace UnitTest
     {
         public string Replace(int replaceNumber)
         {
-            return "";
+            return replaceNumber.ToString();
         }
     }
 }
