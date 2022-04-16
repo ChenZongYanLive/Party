@@ -160,18 +160,13 @@ namespace UnitTest
 
             foreach (var divisorNumber in new int[]{ 3, 5 })
             {
-                if (IsDivide(replaceNumber, divisorNumber) || HasNumber(replaceNumber, divisorNumber))
+                if (IsDivide(replaceNumber, divisorNumber) || replaceNumber.ToString().Contains(divisorNumber.ToString()))
                 {
                     result +=  _replaceDictionary[divisorNumber];
                 }
             }
 
             return string.IsNullOrEmpty(result) ? replaceNumber.ToString() : result;
-        }
-
-        private static bool HasNumber(int replaceNumber, int divisorNumber)
-        {
-            return replaceNumber.ToString().Contains(divisorNumber.ToString());
         }
 
         private static bool IsDivide(int replaceNumber, int divisorNumber)
