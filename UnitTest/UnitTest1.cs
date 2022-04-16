@@ -326,7 +326,7 @@ namespace UnitTest
         {
             var result = "";
 
-            foreach (var divisorNumber in new int[]{ 3, 5, 7 })
+            foreach (var divisorNumber in _replaceDictionary.Keys)
             {
                 if (IsDivide(replaceNumber, divisorNumber) || HasNumber(replaceNumber, divisorNumber))
                 {
