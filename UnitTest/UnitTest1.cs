@@ -144,6 +144,21 @@ namespace UnitTest
             const string expected = "Fizz";
             Assert.AreEqual(expected, actual);
         }
+        
+        [Test]
+        public void Input_27_return_Fizz()
+        {
+            //Arrange
+            var converter = new NumberConverter();
+
+            //Act
+            const int replaceNumber = 27;
+            var actual = converter.Replace(replaceNumber);
+
+            //Assert
+            const string expected = "Fizz";
+            Assert.AreEqual(expected, actual);
+        }
     }
 
     public class NumberConverter
