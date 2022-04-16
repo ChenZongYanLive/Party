@@ -68,6 +68,21 @@ namespace UnitTest
             const string expected = "Fizz";
             Assert.AreEqual(expected, actual);
         }
+        
+        [Test]
+        public void Input_5_return_Buzz()
+        {
+            //Arrange
+            var converter = new NumberConverter();
+
+            //Act
+            const int replaceNumber = 5;
+            var actual = converter.Replace(replaceNumber);
+
+            //Assert
+            const string expected = "Buzz";
+            Assert.AreEqual(expected, actual);
+        }
     }
 
     public class NumberConverter
