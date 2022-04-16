@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace UnitTest
@@ -87,10 +88,16 @@ namespace UnitTest
 
     public class NumberConverter
     {
+        private Dictionary<int, string> _replaceDictionary = new Dictionary<int, string>
+        {
+            { 3, "Fizz"},
+            { 5, "Buzz"}
+        };
+        
         public string Replace(int replaceNumber)
         {
-            if (replaceNumber % 3 == 0) return "Fizz";
-            if (replaceNumber % 5 == 0) return "Buzz";
+            if (replaceNumber % 3 == 0) return _replaceDictionary[3];
+            if (replaceNumber % 5 == 0) return _replaceDictionary[5];
             
             return replaceNumber.ToString();
         }
