@@ -249,6 +249,21 @@ namespace UnitTest
             const string expected = "Whizz";
             Assert.AreEqual(expected, actual);
         }
+        
+        [Test]
+        public void Input_17_return_Whizz()
+        {
+            //Arrange
+            var converter = new NumberConverter();
+
+            //Act
+            const int replaceNumber = 17;
+            var actual = converter.Replace(replaceNumber);
+
+            //Assert
+            const string expected = "Whizz";
+            Assert.AreEqual(expected, actual);
+        }
     }
 
     public class NumberConverter
