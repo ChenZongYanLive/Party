@@ -126,15 +126,21 @@ namespace UnitTest
         
         public string Replace(int replaceNumber)
         {
-            if (replaceNumber == 15) return "FizzBuzz";
+            var result = "";
             
             var divisorNumber = 3;
-            if (IsDivide(replaceNumber, divisorNumber)) return _replaceDictionary[divisorNumber];
+            if (IsDivide(replaceNumber, divisorNumber))
+            {
+                result +=  _replaceDictionary[divisorNumber];
+            }
 
             divisorNumber = 5;
-            if (IsDivide(replaceNumber, divisorNumber)) return _replaceDictionary[divisorNumber];
+            if (IsDivide(replaceNumber, divisorNumber))
+            {
+                result +=  _replaceDictionary[divisorNumber];
+            }
             
-            return replaceNumber.ToString();
+            return string.IsNullOrEmpty(result) ? replaceNumber.ToString() : result;
         }
 
         private static bool IsDivide(int replaceNumber, int divisorNumber)
