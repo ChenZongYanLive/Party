@@ -127,19 +127,15 @@ namespace UnitTest
         public string Replace(int replaceNumber)
         {
             var result = "";
-            
-            var divisorNumber = 3;
-            if (IsDivide(replaceNumber, divisorNumber))
+
+            foreach (var divisorNumber in new int[]{ 3, 5 })
             {
-                result +=  _replaceDictionary[divisorNumber];
+                if (IsDivide(replaceNumber, divisorNumber))
+                {
+                    result +=  _replaceDictionary[divisorNumber];
+                }
             }
 
-            divisorNumber = 5;
-            if (IsDivide(replaceNumber, divisorNumber))
-            {
-                result +=  _replaceDictionary[divisorNumber];
-            }
-            
             return string.IsNullOrEmpty(result) ? replaceNumber.ToString() : result;
         }
 
