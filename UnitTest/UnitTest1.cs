@@ -96,8 +96,11 @@ namespace UnitTest
         
         public string Replace(int replaceNumber)
         {
-            if (replaceNumber % 3 == 0) return _replaceDictionary[3];
-            if (replaceNumber % 5 == 0) return _replaceDictionary[5];
+            var divisorNumber = 3;
+            if (replaceNumber % divisorNumber == 0) return _replaceDictionary[divisorNumber];
+
+            divisorNumber = 5;
+            if (replaceNumber % divisorNumber == 0) return _replaceDictionary[divisorNumber];
             
             return replaceNumber.ToString();
         }
